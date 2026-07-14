@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NutriScan AI — Analyze your food instantly using AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== MOBILE TOPBAR ===================== -->
+  <header class="mobile-topbar">
+    <button class="icon-btn" id="menuToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-brand">
+      <span class="brand-mark">NS</span>
+      <span>NutriScan AI</span>
+    </div>
+    <button class="icon-btn theme-btn" id="themeToggleMobile" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <div class="app-shell">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <span class="brand-mark">NS</span>
+          <div class="brand-text">
+            <strong>NutriScan</strong>
+            <span>AI</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#home" class="nav-link active" data-nav="home">
+          <span class="nav-icon">🏠</span> Home
+        </a>
+        <a href="#history" class="nav-link" data-nav="history">
+          <span class="nav-icon">🕘</span> History
+        </a>
+        <a href="#about" class="nav-link" data-nav="about">
+          <span class="nav-icon">ℹ️</span> About
+        </a>
+        <a href="#contact" class="nav-link" data-nav="contact">
+          <span class="nav-icon">✉️</span> Contact
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="theme-toggle" id="themeToggleDesktop">
+          <span class="toggle-track">
+            <span class="toggle-thumb">🌙</span>
+          </span>
+          <span>Dark mode</span>
+        </button>
+        <p class="sidebar-note">Powered by on-device preview UI · connect your model API</p>
+      </div>
+    </aside>
+
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="main-content">
+
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="home">
+        <div class="blob blob-blue"></div>
+        <div class="blob blob-green"></div>
+
+        <div class="hero-copy">
+          <span class="eyebrow">AI-powered · food recognition</span>
+          <h1>Your Personal AI<br>Nutrition Assistant</h1>
+          <p class="hero-sub">
+            Upload your meal image and let AI analyze calories, nutrients,
+            and provide healthier recommendations.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="heroUploadBtn">
+              <span>Upload Image</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M12 16V4M12 4l-4 4M12 4l4 4M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="btn btn-ghost" id="tryDemoBtn">
+              <span>Try Demo</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M5 3l14 9-14 9V3z" fill="currentColor"/></svg>
+            </button>
+          </div>
+
+          <div class="feature-tags">
+            <span>✔ Upload Food Image</span>
+            <span>✔ AI Food Recognition</span>
+            <span>✔ Nutrition Analysis</span>
+            <span>✔ Diet Recommendation</span>
+            <span>✔ Calories Estimation</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-ring"></div>
+          <svg class="bowl-illustration" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="210" cy="330" rx="140" ry="18" fill="url(#shadowGrad)"/>
+            <path d="M70 190h280c0 82-62 148-140 148S70 272 70 190z" fill="url(#bowlGrad)"/>
+            <path d="M70 190h280" stroke="#0e2a24" stroke-opacity="0.08" stroke-width="10" stroke-linecap="round"/>
+            <ellipse cx="150" cy="175" rx="34" ry="24" fill="#ff9f6b"/>
+            <ellipse cx="215" cy="160" rx="40" ry="26" fill="#7fd8a3"/>
+            <ellipse cx="280" cy="178" rx="30" ry="22" fill="#ffd166"/>
+            <ellipse cx="185" cy="185" rx="22" ry="16" fill="#ef6f6f"/>
+            <ellipse cx="245" cy="190" rx="20" ry="14" fill="#6fb7ef"/>
+            <defs>
+              <linearGradient id="bowlGrad" x1="70" y1="190" x2="350" y2="338" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2f6fed"/>
+                <stop offset="1" stop-color="#17b978"/>
+              </linearGradient>
+              <radialGradient id="shadowGrad" cx="0" cy="0" r="1" gradientTransform="translate(210 330) scale(140 18)" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0e2a24" stop-opacity="0.18"/>
+                <stop offset="1" stop-color="#0e2a24" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+          </svg>
+
+          <div class="floating-badge badge-cal">🔥 <b>412</b> kcal</div>
+          <div class="floating-badge badge-protein">💪 <b>24g</b> protein</div>
+          <div class="floating-badge badge-scan">🔎 scanning…</div>
+        </div>
+      </section>
+
+      <!-- ============ UPLOAD + QUESTION ============ -->
+      <section class="workspace">
+
+        <div class="glass-card upload-card" id="uploadCard">
+          <h2 class="card-title">Upload your meal</h2>
+          <p class="card-sub">Drop an image or browse your files</p>
+
+          <label class="dropzone" id="dropzone" for="fileInput">
+            <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.avif" hidden />
+
+            <div class="dropzone-idle" id="dropzoneIdle">
+              <div class="upload-icon-wrap">
+                <svg viewBox="0 0 48 48" fill="none" class="upload-icon">
+                  <path d="M24 32V10M24 10l-9 9M24 10l9 9" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 34v4a4 4 0 004 4h24a4 4 0 004-4v-4" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="dropzone-title">Drag &amp; drop your food photo here</p>
+              <p class="dropzone-or">or <span>browse files</span></p>
+              <div class="format-pills">
+                <span>JPG</span><span>PNG</span><span>JPEG</span><span>AVIF</span>
+              </div>
+            </div>
+
+            <div class="dropzone-preview" id="dropzonePreview" hidden>
+              <img id="previewImg" alt="Uploaded meal preview" />
+              <div class="scan-line" id="scanLine"></div>
+              <button type="button" class="preview-remove" id="removeImage" aria-label="Remove image">✕</button>
+            </div>
+          </label>
+        </div>
+
+        <div class="glass-card question-card">
+          <h2 class="card-title">Ask about this meal</h2>
+          <p class="card-sub">Type a question, or tap an example below</p>
+
+          <textarea id="questionInput" class="question-textarea" rows="3"
+            placeholder="Ask anything about this meal..."></textarea>
+
+          <div class="example-chips">
+            <button class="chip">How many calories?</button>
+            <button class="chip">Is this healthy?</button>
+            <button class="chip">Can diabetic patients eat this?</button>
+            <button class="chip">Protein content?</button>
+            <button class="chip">Weight loss friendly?</button>
+          </div>
+
+          <button class="btn btn-submit" id="analyzeBtn">
+            <span class="btn-submit-content">
+              <svg class="ai-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2l1.8 5.4L19 9l-5.2 1.6L12 16l-1.8-5.4L5 9l5.2-1.6L12 2z" fill="currentColor"/></svg>
+              <span id="analyzeBtnLabel">Analyze Nutrition</span>
+            </span>
+            <span class="btn-submit-loader" id="submitLoader" hidden>
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </span>
+          </button>
+          <p class="upload-warning" id="uploadWarning" hidden>Please upload a food image first.</p>
+        </div>
+      </section>
+
+      <!-- ============ RESULT ============ -->
+      <section class="result-wrap" id="resultWrap" hidden>
+        <div class="glass-card result-card">
+          <div class="result-header">
+            <span class="result-badge">✅ AI Nutrition Analysis</span>
+            <h2 id="resultFoodName">Grilled Salmon Bowl</h2>
+            <p class="result-typing" id="resultSummary"></p>
+          </div>
+
+          <div class="result-calories">
+            <span class="label">Estimated Calories</span>
+            <span class="calorie-number"><span id="calorieCount">0</span> <small>kcal</small></span>
+          </div>
+
+          <div class="macro-grid">
+            <div class="macro-stat">
+              <div class="macro-icon">🥩</div>
+              <div class="macro-info">
+                <span class="macro-label">Protein</span>
+                <span class="macro-value"><span data-count="28">0</span>g</span>
+                <div class="macro-bar"><span style="--target:70%"></span></div>
+              </div>
+            </div>
+            <div class="macro-stat">
+              <div class="macro-icon">🌾</div>
+              <div class="macro-info">
+                <span class="macro-label">Carbohydrates</span>
+                <span class="macro-value"><span data-count="42">0</span>g</span>
+                <div class="macro-bar"><span style="--target:55%"></span></div>
+              </div>
+            </div>
+            <div class="macro-stat">
+              <div class="macro-icon">🥑</div>
+              <div class="macro-info">
+                <span class="macro-label">Fat</span>
+                <span class="macro-value"><span data-count="16">0</span>g</span>
+                <div class="macro-bar"><span style="--target:38%"></span></div>
+              </div>
+            </div>
+            <div class="macro-stat">
+              <div class="macro-icon">🌿</div>
+              <div class="macro-info">
+                <span class="macro-label">Fiber</span>
+                <span class="macro-value"><span data-count="6">0</span>g</span>
+                <div class="macro-bar"><span style="--target:22%"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-columns">
+            <div class="result-block">
+              <h3>Suggestions</h3>
+              <ul class="tick-list" id="suggestionsList">
+                <li>Pair with leafy greens to boost fiber intake.</li>
+                <li>Great post-workout choice for protein needs.</li>
+                <li>Watch portion size if managing blood sugar.</li>
+              </ul>
+            </div>
+            <div class="result-block">
+              <h3>Healthy Alternatives</h3>
+              <div class="alt-chips" id="alternativesList">
+                <span>Grilled Tofu Bowl</span>
+                <span>Baked Chicken &amp; Quinoa</span>
+                <span>Steamed Veggie Plate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section" id="history">
+        <div class="glass-card info-card">
+          <span class="eyebrow">Your nutrition journey</span>
+          <h2>History that helps you stay on track</h2>
+          <p class="card-sub">Review your past meals, compare nutrient patterns, and build healthier habits with every scan.</p>
+          <div class="info-grid">
+            <article class="info-tile">
+              <h3>Meal timeline</h3>
+              <p>Keep a running record of dishes you scanned so it is easy to spot habits and progress over time.</p>
+            </article>
+            <article class="info-tile">
+              <h3>Smart reminders</h3>
+              <p>Get nudges for balanced meals, hydration, and protein-rich choices based on your recent scans.</p>
+            </article>
+            <article class="info-tile">
+              <h3>Progress insight</h3>
+              <p>See how your choices evolve across weeks and make adjustments that feel realistic and sustainable.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section" id="about">
+        <div class="glass-card info-card">
+          <span class="eyebrow">What NutriScan does</span>
+          <h2>Nutrition guidance built for everyday meals</h2>
+          <p class="card-sub">Our assistant turns a simple food photo into practical nutrition insight that is easy to understand and act on.</p>
+          <div class="info-grid">
+            <article class="info-tile">
+              <h3>Fast analysis</h3>
+              <p>Upload a meal image and receive a quick overview of calories, protein, carbs, fat, and fiber.</p>
+            </article>
+            <article class="info-tile">
+              <h3>Health-aware suggestions</h3>
+              <p>Get friendly recommendations for balanced eating, portion awareness, and lighter alternatives.</p>
+            </article>
+            <article class="info-tile">
+              <h3>Simple and human</h3>
+              <p>The experience is designed to be approachable for beginners, busy students, and health-conscious adults alike.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section" id="contact">
+        <div class="glass-card info-card">
+          <span class="eyebrow">Contact us</span>
+          <h2>Questions, feedback, or partnership ideas?</h2>
+          <p class="card-sub">We are happy to hear from students, food lovers, developers, and wellness teams who want to improve nutrition experiences.</p>
+          <div class="info-grid">
+            <article class="info-tile">
+              <h3>Email</h3>
+              <p>hello@nutriscanai.com</p>
+            </article>
+            <article class="info-tile">
+              <h3>Phone</h3>
+              <p>+91 98765 43210</p>
+            </article>
+            <article class="info-tile">
+              <h3>Support hours</h3>
+              <p>Mon–Fri · 9:00 AM to 6:00 PM</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      
+
+    </main>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
